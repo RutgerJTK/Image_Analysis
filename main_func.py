@@ -1,4 +1,4 @@
-from src import split_stratified
+from src import split_stratified, label_checker
 import pandas
 
 def main():
@@ -7,9 +7,13 @@ def main():
     labels_file["Finding_Labels"] = labels_file["Finding_Labels"].map(lambda Finding_Labels: Finding_Labels.split("|"))
  
     train_test_split(filename_labels)
+    check_labels(labels_file)
 
 def train_test_split(filename_labels):
     split_stratified.call_stratified(filename_labels)
 
+
+def check_labels(labels_file):
+    label_checker.label_go_check(labels_file)
 
 main()
