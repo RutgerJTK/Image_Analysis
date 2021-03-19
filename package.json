@@ -1,0 +1,25 @@
+{
+  "name": "image_analysis",
+  "version": "1.0.0",
+  "description": "ja.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RutgerJTK/Image_Analysis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RutgerJTK/Image_Analysis/issues"
+  },
+  "homepage": "https://github.com/RutgerJTK/Image_Analysis#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "os": "^0.1.1",
+    "pil": "^0.1.1",
+    "urllib": "^2.36.1"
+  }
+}
