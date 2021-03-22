@@ -53,7 +53,7 @@ def main():
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
     x = Dropout(0.7)(x)
-    predictions = Dense(num_classes, activation= 'softmax')(x)
+    predictions = Dense(num_classes, activation= 'sigmoid')(x)
     model = Model(inputs = base_model.input, outputs = predictions)
 
     from keras.optimizers import SGD, Adam

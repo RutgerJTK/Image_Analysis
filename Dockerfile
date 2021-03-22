@@ -6,7 +6,8 @@ RUN apt-get update --fix-missing
 RUN apt install -y wget
 # RUN apt install -y python3.7.4
 RUN apt-get install -y python3-pip
-
+RUN apt-get install -y python3-opencv
+RUN pip install opencv-python
 
 # Defining a working enviroment
 WORKDIR /app

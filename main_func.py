@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-    filename_labels = "D:\School - all things school related\HAN Bio-informatica\Jaar 3\Bi10\Image Analysis\VS_ImageAnalysis\Image_Analysis\data\Data_Entry_2017.csv"
+    filename_labels = "/app/data/Data_Entry_2017.csv"
     # try:
     #     filename_labels = "/data/Data_Entry_2017.csv"   	   ## pathing problem
     # except FileNotFoundError:
@@ -18,7 +18,6 @@ def main():
 
 def train_test_split(labels_file):
     split_stratified.call_stratified(labels_file)
-
 
 def check_labels(labels_file):
     label_checker.label_go_check(labels_file)
