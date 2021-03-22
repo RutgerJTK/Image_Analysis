@@ -61,7 +61,7 @@ def main():
     adam = Adam(lr=0.0001)
     model.compile(optimizer= adam, loss='categorical_crossentropy', metrics=['accuracy'])
 
-    model.fit(X_train, Y_train, epochs = 100, batch_size = 64)
+    model.fit(X_train, Y_train, epochs = 1, batch_size = 64)
 
     preds = model.evaluate(X_test, Y_test)
     print ("Loss = " + str(preds[0]))
