@@ -14,4 +14,4 @@ WORKDIR /app
 COPY requirements.txt /app
 RUN pip3 install -r requirements.txt
 
-CMD ["python", "main_func.py"]
+CMD ["python", "main_func.py"] 
