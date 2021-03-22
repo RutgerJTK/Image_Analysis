@@ -1,5 +1,5 @@
 from skmultilearn.model_selection import IterativeStratification, iterative_train_test_split
-from sklearn import train_test_split
+from sklearn.model_selection import train_test_split
 
 def call_stratified(labels_df):
    iterative_train_test_split = iterative_train_test_split_new
