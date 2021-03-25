@@ -24,18 +24,34 @@ from keras import optimizers
 from keras.models import Sequential,Model,load_model
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D,GlobalAveragePooling2D
 from keras.callbacks import TensorBoard,ReduceLROnPlateau,ModelCheckpoint
-def main():
+
+# Annemieke
+import pickle
+
+def call_model():
     print("START")
 
-    X_train_orig, Y_train_orig, X_test_orig, Y_test_orig, classes = load_dataset()
+    # X_train_orig, Y_train_orig, X_test_orig, Y_test_orig, classes = load_dataset()
 
+    labels = pickle.load(open("data/test/labels.pk", "rb"))
+    image_path = "data/test"
+    # Put files into lists and return them as one list of size 4
+    image_files = sorted([os.path.join(image_path, file)
+        for file in os.listdir(image_path) if file.endswith('.png')])
+    
+    
+    img = [cv2.imread(i, cv2.IMREAD_UNCHANGED) for i in image_files]
+    # X_train_orig = np.array(img)
+    print(img[0].shape)
     # Normalize image vectors
-    X_train = X_train_orig/255.
-    X_test = X_test_orig/255.
+    X_train = map(lambda x: x/255., img)
+    labels = np.array(labels)
+    # X_train = X_train_orig
+    # X_test = X_test_orig/255.
 
     # Convert training and test labels to one hot matrices
-    Y_train = convert_to_one_hot(Y_train_orig, 6).T
-    Y_test = convert_to_one_hot(Y_test_orig, 6).T
+    Y_train = convert_to_one_hot(labels, 14).T
+    # Y_test = convert_to_one_hot(Y_test_orig, 6).T
 
     print ("number of training examples = " + str(X_train.shape[0]))
     print ("number of test examples = " + str(X_test.shape[0]))
@@ -61,6 +77,7 @@ def main():
     adam = Adam(lr=0.0001)
     model.compile(optimizer= adam, loss='categorical_crossentropy', metrics=['accuracy'])
 
+    print(X_train)
     model.fit(X_train, Y_train, epochs = 1, batch_size = 64)
 
     preds = model.evaluate(X_test, Y_test)
@@ -69,4 +86,5 @@ def main():
 
     model.summary()
 
-main()
+call_model()
+# load_dataset()
