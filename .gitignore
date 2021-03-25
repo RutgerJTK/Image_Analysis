@@ -1,6 +1,8 @@
 data/*
 !.gitkeep
 !Data_Entry_2017.csv
+.vscode/*
+model/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
