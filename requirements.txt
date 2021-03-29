@@ -8,8 +8,6 @@ matplotlib==3.3.4
 urllib3==1.26.4
 image==1.5.33
 tqdm==4.59.0
-sklearn==0.0
 opencv-python==4.5.1.48
 Keras==2.4.3
 h5py==2.10.0
-#os,  en math ook geinstalleerd maar kan het niet vinden op pip freeze
