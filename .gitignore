@@ -134,3 +134,9 @@ dmypy.json
 
 # Modules
 node_modules/
+
+#image data
+ChestXray-NIHCC/
+image_files/
+xray_images/
+sortedImages/
