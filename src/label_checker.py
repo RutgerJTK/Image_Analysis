@@ -32,6 +32,7 @@ def label_go_check(f_labels):
         fracs_10.append(int(frac_10))
         fracs.append(frac_value)
 
+    print(fracs_10)
     ## pure graph, no fractioning
     fig = plt.figure()
     ax = fig.add_axes([0,0,1,1])
