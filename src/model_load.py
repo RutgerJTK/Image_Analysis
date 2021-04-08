@@ -14,7 +14,7 @@ from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 from keras.metrics import Precision, Recall
 from sklearn.preprocessing import MultiLabelBinarizer
-from keras import backend as K
+import tensorflow.keras.backend as K
 
 
 K.tensorflow_backend._get_available_gpus()
