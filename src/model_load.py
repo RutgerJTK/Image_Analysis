@@ -14,11 +14,11 @@ from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 from keras.metrics import Precision, Recall
 from sklearn.preprocessing import MultiLabelBinarizer
-import tensorflow.keras.backend as K
+from tensorflow.python.client import device_lib
+
+print(device_lib.list_local_devices())
 
 
-K.tensorflow_backend._get_available_gpus()
-#check if gpu word gebruikt
 
 num_classes = 15
 unique_labels = ['Cardiomegaly', 'Emphysema', 'Effusion', 'No Finding', 'Hernia', 'Infiltration', 'Mass', 'Nodule', 'Atelectasis', 'Pneumothorax', 'Pleural_Thickening', 'Pneumonia', 'Fibrosis', 'Edema', 'Consolidation']
